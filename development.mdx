@@ -1,94 +1,82 @@
 ---
-title: 'Development'
-description: 'Preview changes locally to update your docs'
+title: "Quickstart"
+description: "Here are basic steps how to get started with Mycelium SDK"
 ---
 
 <Info>
   **Prerequisites**:
-  - Node.js version 19 or higher
-  - A docs repository with a `docs.json` file
+
+  - Node.js version 22.11.00 or higher
+  - pnpm 10.9.0 or higher
 </Info>
 
-Follow these steps to install and run Mintlify on your operating system.
+Follow these steps to install and run Mycelium SDK for your product
 
 <Steps>
-<Step title="Install the Mintlify CLI">
+  <Step title="Create a simple project">
+    Create a simple project to test the SDK
 
-```bash
-npm i -g mint
-```
-</Step>
+    ```bash
+    pnpm init -y
+    ```
+  </Step>
+  <Step title="Install the Mycelium SDK">
+    ```bash
+    pnpm install @mycelium-sdk/core
+    ```
+  </Step>
+  <Step title="Init SDK">
+    Initiate an SDK with basic settings and API key (how to get an API key?)
 
-<Step title="Preview locally">
+    ```typescript
+    import { MyceliumSDK } from "@mycelium-sdk/core";
+    
+    const sdk = await MyceliumSDK.init({
+      apiKey: "sk_...",
+      chainId: 8453,
+      protocolsSecurityConfig: {
+        riskLevel: "low",
+      },
+    });
+    ```
 
-Navigate to your docs directory where your `docs.json` file is located, and run the following command:
+    This will initiate an SDK object that you can use further to manage web3 account and getting DeFi opportunities
+  </Step>
+  <Step title="That's it!">
+    You're done! Right now you can check which DeFi opportunities are available so far
 
-```bash
-mint dev
-```
-
-A local preview of your documentation will be available at `http://localhost:3000`.
-
-</Step>
+    ```typescript
+    await sdk.protocols.getBestVaults()
+    ```
+  </Step>
 </Steps>
 
-## Custom ports
+## SDK limitations
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. For example, to run Mintlify on port 3333, use this command:
+The SDK is the server only and can't be used directly on frontend. To use Mycelium for frontend projects you need to create a basic API to access SDK abilities
 
-```bash
-mint dev --port 3333
-```
+<Note>
+  The React library is currently under development and will be available soon. Stay tuned on our [GitHub](https://github.com/MyceliumSDK/mycelium-sdk/tree/main)
+</Note>
 
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
+## SDK settings
 
-```md
-Port 3000 is already in use. Trying 3001 instead.
-```
-
-## Mintlify versions
-
-Please note that each CLI release is associated with a specific version of Mintlify. If your local preview does not align with the production version, please update the CLI:
-
-```bash
-npm mint update
-```
-
-## Validating links
-
-The CLI can assist with validating links in your documentation. To identify any broken links, use the following command:
-
-```bash
-mint broken-links
-```
-
-## Deployment
-
-If the deployment is successful, you should see the following:
-
-<Frame>
-  <img src="/images/checks-passed.png" alt="Screenshot of a deployment confirmation message that says All checks have passed." style={{ borderRadius: '0.5rem' }} />
-</Frame>
-
-## Code formatting
-
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
+There are several parameters that you need to define on the initialization step before using the SDK except of API key. To get more information about which settings can be provided and for what they are responsible to, you can check the [SDK settings](/sdk-settings)
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
-
+  <Accordion title="How to get an API key?">
     This may be due to an outdated version of node. Try the following:
+
     1. Remove the currently-installed version of the CLI: `npm remove -g mint`
     2. Upgrade to Node v19 or higher.
     3. Reinstall the CLI: `npm i -g mint`
   </Accordion>
-
-  <Accordion title="Issue: Encountering an unknown error">
-  
+  <Accordion title="The SDK is failing on the init step">
     Solution: Go to the root of your device and delete the `~/.mintlify` folder. Then run `mint dev` again.
   </Accordion>
+  <Accordion title="SDK methods are not working">
+    
+  </Accordion>
 </AccordionGroup>
-
-Curious about what changed in the latest CLI version? Check out the [CLI changelog](https://www.npmjs.com/package/mintlify?activeTab=versions).

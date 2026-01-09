@@ -1,0 +1,19 @@
+---
+title: "Variables"
+description: "About environment variables for self-hosted version"
+---
+
+Both self hosted and cloud version are required some variables to be provided during the initialization of an SDK. The list of envs for cloud version is significant, than for a self hosted one. Here is the full list of variables:
+
+| Variable Name                 | Description                                                                                        | Version             | Mandatory |
+| ----------------------------- | -------------------------------------------------------------------------------------------------- | ------------------- | --------- |
+| `PRIVY_APP_ID`                | Privy wallet app id for embedded wallets                                                           | Self-hosted         | Yes       |
+| `PRIVY_APP_SECRET`            | Privy wallet app secret for embedded wallets                                                       | Self-hosted         | Yes       |
+| `RPC_URL`                     | A RPC URL for a chain                                                                              | Self-hosted         | Yes       |
+| `BUNDLER_URL`                 | A bundler URL to process User Operations                                                           | Self-hosted         | Yes       |
+| `COINBASE_CDP_API_KEY_ID`     | Coinbase CDP Api Key ID for on/off ramp functionality                                              | Self-hosted         | No        |
+| `COINBASE_CDP_API_KEY_SECRET` | Coinbase CDP Api secret for on/off ramp functionality                                              | Self-hosted         | No        |
+| `INTEGRATOR_ID`               | Unique integrator ID to track SDK usage and enable 3rd party services (e.g., Coinbase off/on-ramp) | Self-hosted         | Yes       |
+| `API_KEY`                     | API key to run SDK with managed settings                                                           | Cloud               | Yes       |
+| `PROTOCOL_RISK_LEVEL`         | Risk level of protocol that will be used by an SDK in the configuration                            | Cloud & self-hosted | Yes       |
+| `CHAIN_ID`                    | Chain ID to work with                                                                              | Cloud & self-hosted | Yes       |

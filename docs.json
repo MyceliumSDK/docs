@@ -9,16 +9,47 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Documentation",
+          "icon": "book-open-cover",
+          "href": "https://mintlify.com/docs"
+        },
+        {
+          "anchor": "Blog",
+          "icon": "newspaper",
+          "href": "https://mintlify.com/blog"
+        }
+      ]
+    },
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Overview",
         "groups": [
           {
             "group": "Getting started",
             "pages": [
-              "index",
+              "welcome",
               "quickstart",
-              "development"
+              "sdk-settings",
+              "support"
+            ]
+          },
+          {
+            "group": "Versions",
+            "pages": [
+              "overview/versions/overview",
+              "versions/cloud",
+              {
+                "group": "Self-hosted",
+                "pages": [
+                  "versions/self-hosted/overview",
+                  "versions/self-hosted/variables",
+                  "versions/self-hosted/installation",
+                  "versions/self-hosted/testing"
+                ]
+              }
             ]
           },
           {
@@ -29,26 +60,16 @@
             ]
           },
           {
-            "group": "Writing content",
+            "group": "About Mycelium",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "about-mycelium/what-is",
+              "about-mycelium/team"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "SDK reference",
         "groups": [
           {
             "group": "API documentation",
@@ -67,21 +88,7 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",

@@ -1,0 +1,46 @@
+---
+title: "Installation"
+---
+
+To get started with the Self-hosted version you need to fork/clone the Mycelium SDK repo and build the project. Here are quick steps how to make this 
+
+<Steps>
+  <Step title="Clone the repo">
+    ```bash
+    git clone https://github.com/MyceliumSDK/mycelium-sdk.git
+    ```
+  </Step>
+  <Step title="Install dependencies">
+    ```bash
+    pnpm install
+    ```
+  </Step>
+  <Step title="Build the SDK">
+    ```bash
+    cd package/sdk && pnpm install
+    ```
+  </Step>
+</Steps>
+
+<Info>
+  The built SDK can then be used in your application or imported as a local library to any of your local project
+</Info>
+
+
+## Varialbes
+
+To use the SDK in the self-hosted mode, you need to provide several necessary environment variables during the SDK initialization, similar how it was with the [Cloud version](/versions/cloud)
+
+<Tip>
+  You don't need to provide any variables for the SDK before the building process. Environment variables are necessary only for using the SDK after
+</Tip>
+
+You can check the [Varialbes](/versions/self-hosted/variables) sectipon to get the list of all necessary varialbes 
+
+## Testing 
+
+There is an infrastructure in Mycelium SDK monorepo to test the self-hosted version and start contributoin to the project
+
+You can use local SDK with a chain fork along with pre-build faucet. To quickly interact with a build SDK you can also use a ready-to-use CLI
+
+To get more information about how you can test locally build SDK, refer to the [Testing](/versions/self-hosted/testing) section
