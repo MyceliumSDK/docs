@@ -1,0 +1,37 @@
+---
+title: "CLI"
+description: "About testing the locally build SDK"
+---
+
+Right after you modify or build locally the Mycelium SDK, you can test it right away with test net, main net or even with fork of a chain. To make this, you only need to run a CLI service that lives at the same repo that SDK. To get started, you need to follow next steps:
+
+<Steps>
+  <Step title="Install CLI dependencies">
+    Go to the directory and install dependencies
+
+    ```bash
+    cd packages/cli && pnpm install
+    ```
+  </Step>
+  <Step title="Setup CLI environment variables">
+    Provide all necessary CLI env variables in the **.env** file
+
+    <Card title="CLI env variables" horizontal href="versions/self-hosted/cli-env-variables" cta="Lear more">
+      
+    </Card>
+  </Step>
+  <Step title="Start CLI">
+    Start the CLI with provided environment variables
+
+    ```bash
+    pnpm run start
+    ```
+
+    Right after this the latest SDK version will be build and you can start using it via CLI
+  </Step>
+  <Step title="Start testing">
+    Right after you start the CLI you will see all available commands that you can execute via CLI
+
+    ![Screenshot2026 01 10at21 56 29 1](/images/Screenshot2026-01-10at21.56.29-1.png)
+  </Step>
+</Steps>

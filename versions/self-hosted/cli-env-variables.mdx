@@ -1,0 +1,19 @@
+---
+title: "CLI env variables"
+---
+
+To run CLI locally with SDK you need to provide the list of mandatory variables. Here is the full list of environment variables that you need to provide into .env file in the CLI package:
+
+| Variable                        | Description                                                                                                                                        | Mandatory |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| **PRIVY_APP_ID**                | Privy wallet app id for embedded wallets                                                                                                           | ✅         |
+| **PRIVY_APP_SECRET**            | Privy wallet app secret for embedded wallets                                                                                                       | ✅         |
+| **CHAIN_ID**                    | Chain ID to work with. Default: 8453                                                                                                               | ✅         |
+| **RPC_URL**                     | A RPC URL for a provided chain                                                                                                                     | ✅         |
+| **BUNDLER_URL**                 | A bundler URL to process User Operations                                                                                                           | ✅         |
+| **PAYMSATER_URL**               | A paymaster URL to sponsor gas for onchain operations                                                                                              | ✅         |
+| **COINBASE_CDP_API_KEY_ID**     | Coinbase CDP Api Key ID in case if you want to use on/off ramp functionality                                                                       | ❌         |
+| **COINBASE_CDP_API_KEY_SECRET** | Coinbase CDP Api secret in case if you want to use on/off ramp functionality                                                                       | ❌         |
+| **INTEGRATOR_ID**               | Unique integrator ID  that is necessary to track SDK usage and to enable 3d party services, e.g. Coinbase off/on-ramp                              | ✅         |
+| **PROTOCOL_RISK_LEVEL**         | The risk level of protocols that should be used to recommend DeFi opportunities. More about this option in the [**Protocols** section](/protocols) | ✅         |
+| **BLOCKCHAIN_SERVICE_HOSTNAME** | The URL of the faucet service. More about service in the [Local faucet section](/overview/versions/self-hosted/testing/local-faucet)               | ❌         |
