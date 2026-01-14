@@ -1,4 +1,37 @@
 ---
 title: "Protocols"
+description: "Which protocol are integrated and what is risk level? "
 ---
 
+One of the main feature of Mycelium SDK is to provide a seamless access to different DeFi protocols. The SDK handles the connection, fetching of data and further interactions under the hood and brings the user friendly user experiece for developers, so they don't need to care about crypto complexity and can focus on delivering perfectuser experience for their users
+
+## Protocols
+
+SDK can work with the limited list of protocols so far. Here is a more comprehensive details about integrated protocols:
+
+| Protocol name               | Chain                             | Protocol risk level | Version availability |
+| --------------------------- | --------------------------------- | ------------------- | -------------------- |
+| [Spark](https://spark.fi)   | Base (8453), Base sepolia (84532) | Low                 | Self-hosted          |
+| [Beefy](https://beefy.com/) | Base (8453), Base sepolia (84532) | Low                 | Cloud                |
+
+Everyone can use the whole core of Mycelium SDK for free as the repo is open source. Developers can manage user wallets as well as recommend DeFi opportunities to their users using Spark protocol
+
+Spark protocol offers **4% APY** that is already siginificantly higher then regular TradFi offers
+
+![Image](/images/image.png)
+
+## Protocol risk level
+
+Currently we defined the super basic shema to tag different protocols with a partcular risk level, so developers can understand what they better to use or not
+
+Protocol risk level means the overall security level of the protocol based on the reputaitonal and market living time range
+
+Usually protocols with `high` risk level offer more interesting DeFi opportunities, but at the same time bring more risks to end users as they could be compromised
+
+<Tip>
+  Risk level is not related to a risk level of a recommended DeFi opportunity that a protocol could offer via SDK
+</Tip>
+
+Developer can choose from which protocols he wants to get DeFi opportunities via SDK. The SDK will use this settings and find the best protocol and vault under the hood. No one, including integrator, will need to care about this part
+
+In addition to protocol risk level, we're planning to extend the variety of criteria that developer can use to find the perfect list of protocols to work with. Stay tuned on further updates

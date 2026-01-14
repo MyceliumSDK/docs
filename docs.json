@@ -27,8 +27,8 @@
             "pages": [
               "welcome",
               "quickstart",
+              "api-key",
               "protocols",
-              "sdk-settings",
               "support"
             ]
           },
@@ -40,7 +40,7 @@
                 "group": "Cloud",
                 "pages": [
                   "versions/cloud",
-                  "overview/versions/cloud/api-key"
+                  "overview/versions/cloud/untitled-page"
                 ]
               },
               {
@@ -62,13 +62,6 @@
             ]
           },
           {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
             "group": "About Mycelium",
             "pages": [
               "about-mycelium/what-is",
@@ -79,6 +72,7 @@
       },
       {
         "tab": "SDK reference",
+        "hidden": true,
         "groups": [
           {
             "group": "API documentation",
@@ -100,14 +94,14 @@
     ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/light.svg"
+    "light": "/logo/logo-long-light.png",
+    "dark": "/logo/logo-long-dark.png"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:myceliumsdk@gmail.com"
       }
     ],
     "primary": {
@@ -135,5 +129,8 @@
       "website": "https://mycelium.sh/"
     }
   },
-  "description": "Gateway to advanced web3 yield"
+  "description": "Gateway to advanced web3 yield",
+  "appearance": {
+    "default": "light"
+  }
 }

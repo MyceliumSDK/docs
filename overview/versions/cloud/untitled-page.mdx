@@ -1,0 +1,57 @@
+---
+title: "Installation guide"
+---
+
+## Prerequisites
+
+Before starting to work with Mycelium SDK in a Cloud version you need to have an API key. If you don't have it, please refer to the section:
+
+<Card title="API key" icon="key" href="/api-key" cta="Get your api key">
+  Get a key to start using Mycelium Cloud
+</Card>
+
+## Installation
+
+<Steps>
+  <Step title="Create a simple project">
+    Create a simple project to test the SDK
+
+    ```bash
+    pnpm init -y
+    ```
+  </Step>
+  <Step title="Install the Mycelium SDK">
+    ```bash
+    pnpm install @mycelium-sdk/core
+    ```
+  </Step>
+  <Step title="Init SDK">
+    Initiate an SDK with basic settings and API key
+
+    <Tip>
+      \*\*Don't know what is risk level? \*\*[**Read about it!**](/protocols)
+    </Tip>
+    ```typescript
+    import { MyceliumSDK } from "@mycelium-sdk/core";
+    
+    const sdk = await MyceliumSDK.init({
+      apiKey: "sk_...",
+      chainId: 8453,
+      protocolsSecurityConfig: {
+        riskLevel: "low",
+      },
+    });
+    ```
+
+    This will initiate an SDK object that you can use further to manage web3 account and getting DeFi opportunities
+  </Step>
+  <Step title="That's it!">
+    You're done! Right now you can check which DeFi opportunities are available so far
+
+    ```typescript
+    await sdk.protocols.getBestVaults()
+    ```
+  </Step>
+</Steps>
+
+## 
