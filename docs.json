@@ -62,6 +62,13 @@
             ]
           },
           {
+            "group": "Gas sponsoring",
+            "pages": [
+              "overview/gas-sponsoring/untitled-page",
+              "overview/gas-sponsoring/use-paymaster"
+            ]
+          },
+          {
             "group": "About Mycelium",
             "pages": [
               "about-mycelium/what-is",

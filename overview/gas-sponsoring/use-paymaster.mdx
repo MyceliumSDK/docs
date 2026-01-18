@@ -1,0 +1,56 @@
+---
+title: "Use paymaster"
+---
+
+To use paymaster you simply need to pass a ERC-20 token that you want a user to pay a gas with 
+
+Currently paymaster is integrated to several operations with the SDK:
+
+1. Send a transaction
+2. Deposit funds to a DeFi opportunity (`earn()` method)
+3. Withdraw funds to a DeFi opportunity (`withdraw()` method)
+
+## How to use a paymaster? 
+
+Here is a quick exmaple how to sponsor gas during the depositing a user funds to DeFi opportunity
+
+<Steps>
+  <Step title="Init SDK">
+    ```javascript
+    import { MyceliumSDK } from '@mycelium-sdk/core';
+    
+    
+    const sdk = await MyceliumSDK.init({
+        apiKey:
+          "sk_e010bc44958665229cb89634448f81f532231ce131c4eb98816eadcb2e6ed7fa47",
+        chainId: 8453,
+        protocolsSecurityConfig: {
+          riskLevel: "low",
+        },
+      });
+    ```
+  </Step>
+  <Step title="Get a vault to depoist">
+    ```javascript
+    const vaults = await sdk.protocols.getBestVaults()
+    ```
+  </Step>
+  <Step title="Get or create a user wallet">
+    ```javascript
+    const wallet = await this.sdk.wallet.createAccount()
+    ```
+  </Step>
+  <Step title="Deposit using paymaster">
+    ```javascript
+    const USDC_TOKEN_ADDRESS = "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    
+    const txnHash = await wallet.earn(
+    	selectedVault.vaultInfo, 
+    	amountToDeposit, 
+    	{
+          paymasterToken: USDC_TOKEN_ADDRESS,
+        }
+    );
+    ```
+  </Step>
+</Steps>

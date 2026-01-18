@@ -1,0 +1,21 @@
+---
+title: "Overview"
+---
+
+<Tip>
+  Paymaster is currently available in [@mycelium-sdk/core@](https://www.npmjs.com/package/@mycelium-sdk/core/v/2.0.0-alpha.1)[2.0.0-alpha.1](https://www.npmjs.com/package/@mycelium-sdk/core/v/2.0.0-alpha.1)
+</Tip>
+
+There is an ability to use a Alto Paymaster inside the SDK to sponsor transactions using ERC0-20 tokens
+
+<Warning>
+  Currrently, only Alto paymaster is supported for the SDK. Also, only ERC-20 tokens can be used for gas sponsoring
+</Warning>
+
+Paymaster is disabled by default and it's not necessary to be used overall
+
+By default, if paymaster is enabled, then a user will pay a gas using a token that you provide for the SDK operation
+
+<Warning>
+  You don't need to deposit any funds to a gas tank or do anything like this. When you pass a token, a user will automatically pay gas using a provided token, e.g. USDC
+</Warning>

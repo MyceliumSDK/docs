@@ -1,5 +1,62 @@
 ---
 title: "Local faucet"
+description: "Fork and faucet guides for the local development"
 ---
 
-TBD
+If you don't want to work with main or/and test nets, you can also run your own chain fork and use the local faucet service to smothly test the SDK during the local development
+
+## Run the local chain setup
+
+<Note>
+  Prerequisites:
+
+  - Installed [Foundry](https://getfoundry.sh/) and [Anvil](https://getfoundry.sh/) for a local fork
+  - Installed [Alto](https://github.com/pimlicolabs/alto) bundler for processing UserOperations
+</Note>
+
+<Steps>
+  <Step title="Run fork">
+    You can run the chain fork using Anvil directly or you can run script for Alto bundler and fork
+
+    - [Anvil fork guide](https://getfoundry.sh/introduction/getting-started)
+    - [Alto bundler + fork](https://github.com/pimlicolabs/alto/tree/main/scripts)
+  </Step>
+  <Step title="Run bundler">
+    You can run a bundler via Alto open sourced script. Chek the link above
+  </Step>
+  <Step title="Clone SDK repo">
+    ```shellscript
+    git clone https://github.com/MyceliumSDK/mycelium-sdk.git
+    ```
+  </Step>
+  <Step title="Install al dependencies">
+    ```shellscript
+    cd mycelium-sdk
+    pnpm run build
+    ```
+  </Step>
+  <Step title="Setup variables">
+    Setup all env variables for:
+
+    - `packages/blockchain`
+    - `packages/sdk`
+    - `packages/cli`
+
+    All variables can be found on the [**Variables section**](/versions/self-hosted/variables)
+  </Step>
+  <Step title="Run services">
+    Run the facuet service:
+
+    ```shellscript
+    cd packages/blockchain
+    pnpm run dev
+    ```
+
+    Run the CLI (SDK will be buildautomatically):
+
+    ```shellscript
+    cd packages/cli
+    pnpm run start
+    ```
+  </Step>
+</Steps>

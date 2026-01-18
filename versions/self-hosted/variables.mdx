@@ -17,3 +17,15 @@ Both self hosted and cloud version are required some variables to be provided du
 | `API_KEY`                     | API key to run SDK with managed settings                                                           | Cloud               | Yes       |
 | `PROTOCOL_RISK_LEVEL`         | Risk level of protocol that will be used by an SDK in the configuration                            | Cloud & self-hosted | Yes       |
 | `CHAIN_ID`                    | Chain ID to work with                                                                              | Cloud & self-hosted | Yes       |
+
+## Faucet variables
+
+If you want to run the local faucet, you need to set variables in `.env` for the faucet service in `packages/blockchain`
+
+| Env           | Descritpion                          |
+| :------------ | :----------------------------------- |
+| FORK_RPC_URL  | The URL of your chain fork           |
+| EXPRESS_PORT  | The port for the facuet service      |
+| EXPRESS_ENTRY | The main file for the faucet service |
+| NODE_CMD      | Manager to run the script            |
+| BUNDLER_URL   | The URL of the Alto bundler          |
