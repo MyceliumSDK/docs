@@ -2,7 +2,7 @@
 title: "Use paymaster"
 ---
 
-To use paymaster you simply need to pass a ERC-20 token that you want a user to pay a gas with 
+To use paymaster you simply need to pass a ERC-20 token that you want a user to pay a gas with
 
 Currently paymaster is integrated to several operations with the SDK:
 
@@ -10,7 +10,7 @@ Currently paymaster is integrated to several operations with the SDK:
 2. Deposit funds to a DeFi opportunity (`earn()` method)
 3. Withdraw funds to a DeFi opportunity (`withdraw()` method)
 
-## How to use a paymaster? 
+## How to use a paymaster?
 
 Here is a quick exmaple how to sponsor gas during the depositing a user funds to DeFi opportunity
 
@@ -41,6 +41,13 @@ Here is a quick exmaple how to sponsor gas during the depositing a user funds to
     ```
   </Step>
   <Step title="Deposit using paymaster">
+    <Warning>
+      Make sure that the smart wallet have enough token balance that you pass to paymaster for gas sponsoring
+
+      If the gas token will be the same token that you're depositing, you need to check that a user will leave at leas small portion on the wallet to complete the deposit AND make a withdrawal later on 
+
+      Check more exmples of this use case below
+    </Warning>
     ```javascript
     const USDC_TOKEN_ADDRESS = "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
     
@@ -54,3 +61,15 @@ Here is a quick exmaple how to sponsor gas during the depositing a user funds to
     ```
   </Step>
 </Steps>
+
+## Reserved gas amount
+
+In some cases you want to use for gas sponsring the same ERC-20 token that you're using for a deposit to a DeFi opportunity
+
+For example, you want to deposit 100 USDC to a vault. In this case, you need to care that a user will still have some small portion of USDC on the smart wallet to perform the deposit action as well as withdrawal later on
+
+In case of L2 networks, the gas price will be small on 0.01 USDC should be enough to cover 1 operation with gas sponsoring
+
+For some L1 networks (e.g. Ethereum) gas can be significantly higher and you need to care that user would have enought ERC-20 token to cover the gas fee
+
+The same will be with ERC-20 tokens with decimals \> 6, e.g. ETH or BTC. In this case, you can reserve at least 1% of the token for the further gas fee, so a user can successfully complete onchain operations
